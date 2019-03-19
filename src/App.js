@@ -13,7 +13,7 @@ class App extends Component {
             food:"",
             label:"",
             response:false,
-            picture:false,
+            loadingPicture:false,
         }
     }
 
@@ -40,7 +40,7 @@ class App extends Component {
 
     loadingSpinner = () =>{
         this.setState({
-            picture:true
+            loadingPicture:true
         })
     }
 
@@ -50,10 +50,11 @@ class App extends Component {
     searchRecipes = () => {
         this.loadingSpinner()
         const  {Food}  = this.state;
+        const MAX_RESULTS = 100; // Change for performance reasons
         const API_KEY = "414c4ae5cd2446bda63bcb12231722cf";
         //RECIPE APP ID
         const API_ID = "3800b0d1";
-        const API_CALL = `https://api.edamam.com/search?q=${Food}&app_id=${API_ID}&app_key=${API_KEY}`;
+        const API_CALL = `https://api.edamam.com/search?q=${Food}&app_id=${API_ID}&app_key=${API_KEY}&from=${0}&to=${MAX_RESULTS}`;
         console.log(Food);
         
         fetch(API_CALL)
@@ -62,7 +63,7 @@ class App extends Component {
             
             this.setState({
                 isLoading:false,
-                picture:false,
+                loadingPicture:false,
                 items:json,
                 Food:Food, 
                 label:  json.hits,
@@ -115,7 +116,7 @@ class App extends Component {
     // }
     
     render() {
-        if (this.state.picture) {
+        if (this.state.loadingPicture) {
             return <div id="loading-container"><img id="loading-icon" src="./food.gif"/></div>;
         }else
        {
