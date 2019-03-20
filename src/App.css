@@ -7,7 +7,7 @@ body {
   background-color: rgb(14, 90, 131);
   margin: 0;
   padding: 0;
-  background-image: url("https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-image: url("https://images.pexels.com/photos/326268/pexels-photo-326268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,7 +17,7 @@ body {
 .App {
   text-align: center;
   height: 100vh;
-  width:100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -28,111 +28,116 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   position: fixed;
-  top:0;
+  top: 0;
 }
 
 
 .title {
   width: 50%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 
 
-#header .title{
-  background-color:rgb(134,205,100);
-  color:white
+#header .title {
+  background-color: rgba(133, 205, 100, 0.747);
+  color: white
 }
 
 #search-field {
   width: 100%;
-  background-color: white;
-  display:flex;
+  display: flex;
   justify-content: flex-end;
-  background-color:rgb(134,205,100);
+  background-color: rgba(133, 205, 100, 0.747);
 }
 
 #food-input {
+  background-color: rgba(248, 248, 248, 0.815);
   height: 50px;
   width: 350px;
-  margin-top:10px;
+  margin-top: 10px;
   font-size: 1.5em;
   font-weight: bold;
-  text-indent: 5px
+  text-indent: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 #submit-btn {
-  background-color: rgb(248, 248, 248);
-  border: none;
+  background-color: rgba(248, 248, 248, 0.815);
   height: 49px;
   width: 150px;
-  margin-top:10.5px;
-  margin-right:10px;
+  margin-top: 10.5px;
+  margin-right: 10px;
   font-size: 1.5em;
   font-weight: bold;
-  margin-left:5px;;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
 }
 
-#modal-container{
-  height:100%;
-  width:100%;
+#modal-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
-  font-size:1.5em;
-  font-weight:bold;
+  font-size: 1.5em;
+  font-weight: bold;
   z-index: 10;
 }
 
-#modal{
+#modal {
   background-color: rgb(255, 255, 255);
-  width:50%;
-  margin-top:-150px;
+  width: 50%;
+  margin-top: -150px;
   position: absolute;
-  border-radius:10px;
   z-index: 10;
+  font-weight: 400;
 }
 
-#help-button{
-  background-color: rgb(247, 154, 15);
-  height:50px;
-  width:50px;
-  color:white;
-  font-weight:bold;
-  margin:10px 10px 0 0;
-  display:flex;
+#help-button {
+  background-color: rgba(252, 159, 1, 0.815);
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-weight: bold;
+  margin: 10px 10px 0 0;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius:10px;
+  border-radius: 10px;
 }
-#help-button:hover{
+
+#help-button:hover {
   cursor: pointer;
 }
 
-#close{
+#close {
   background-color: red;
-  height:25px;
-  width:25px;
-  color:white;
-  font-weight:bold;
+  height: 25px;
+  width: 25px;
+  color: white;
+  font-weight: bold;
   position: absolute;
-  right:0;
-  top:0;
-  border-radius:0 10px 0 0;
+  right: 0;
+  top: 0;
   z-index: 1;
 }
-#close:hover{
+
+#close:hover {
   cursor: pointer;
 }
 
-.sub-title{
-  color:white;
-  font-size:2em;
-  margin-top:100px;
+.sub-title {
+  color: white;
+  font-size: 2em;
+  margin-top: 100px;
+  font-weight: bold;
 }
 
 #loading-container {
@@ -141,8 +146,8 @@ body {
 }
 
 #loading-icon {
-  width: 300px;
-  height:300px;
+  width: 350px;
+  height: 300px;
   margin: auto;
   border-radius: 10%;
 }
@@ -157,13 +162,11 @@ body {
 }
 
 .response-image {
-  background-color: rgba(97, 97, 97, 0.664);
-  border:1px solid rgb(255, 255, 255);
-  width: 400px;
-  border-radius: 10%;
+  background-color: rgba(97, 97, 97, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 350px;
   margin: 20px;
   padding: 20px;
-
 }
 
 .response-image img:hover {
@@ -172,84 +175,103 @@ body {
 
 .response-image a {
   color: rgb(255, 255, 255);
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: bold;
   text-decoration: none
 }
 
 .response-image img {
-  background-color: aquamarine;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 10%;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 95%;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#vendor {
+  font-size: .7em;
+  font-weight: 600;
+  color: rgba(133, 205, 100)
+}
+
+#calories {
+  font-size: .5em;
+  font-weight: 600;
+  color: rgb(252, 159, 1)
 }
 
 
-#footer{
-  background-color:rgb(134,205,100);
-  position:fixed;
-  width:100%;
-  bottom:0;
+#footer {
+  background-color: rgba(133, 205, 100, 0.747);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 
-@media(max-width:720px){
+@media(max-width:720px) {
   .title {
     width: 50%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     overflow: none;
   }
-  
-  
-  
-  #header .title{
-    background-color:rgb(134,205,100);
-    color:rgb(14, 13, 13);
+
+  #loading-icon {
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    border-radius: 10%;
+  }
+
+
+  #header .title {
+    background-color: rgba(133, 205, 100, 0.747);
     font-size: 1.2em;
   }
-  
+
   #search-field {
     width: 100%;
     background-color: white;
-    display:flex;
+    display: flex;
     justify-content: flex-end;
-    background-color:rgb(134,205,100)
+    background-color: rgba(133, 205, 100, 0.747)
   }
 
   #food-input {
     height: 50px;
     width: 150px;
-    margin-top:10px
+    margin-top: 10px
   }
-  
+
   #submit-btn {
-    background-color: rgb(248, 248, 248);
     border: none;
     height: 50px;
     width: 80px;
-    margin-top:10px;
-    margin-right:10px;
+    margin-top: 10px;
+    margin-right: 10px;
   }
 
-  #modal-container{
-    height:100%;
-    width:100%;
+  #modal-container {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
-    font-size:1.5em;
-    font-weight:bold;
+    font-size: 1.5em;
+    font-weight: bold;
     z-index: 10;
   }
 
 
-  #modal{
+  #modal {
     background-color: rgb(255, 255, 255);
-    width:80%;
+    width: 80%;
   }
 
 

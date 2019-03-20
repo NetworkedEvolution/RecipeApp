@@ -12,10 +12,11 @@ class App extends Component {
             ingredients:"",
             food:"",
             label:"",
+            source:"",
+            calories:"",
             response:false,
             loadingPicture:false,
             show:false,
-            modalClass:""
         }
     }
 
@@ -57,6 +58,8 @@ class App extends Component {
                 Food:Food, 
                 label:  json.hits,
                 food: json.hits,
+                source:json.hits,
+                calories: json.hits,
                 url: json.hits,
             })
         });
@@ -79,6 +82,8 @@ class App extends Component {
                 <a href={this.state.url[i].recipe.url} target="_blank">
                 <img  src={food.recipe.image} /> 
                 <div>{this.state.label[i].recipe.label}</div>
+                <div id="vendor">{this.state.source[i].recipe.source}</div>
+                <div id="calories">Calories: {Math.floor(this.state.calories[i].recipe.calories)}</div>
                 </a>
                 </div>
             )}))
@@ -91,10 +96,12 @@ class App extends Component {
             return null
         }else
        return(<div >
-        <div id="modal-container"><div id="modal">Help <br/><br/>
+        <div id="modal-container"><div id="modal">
+        Search any food or drink in the box above.<br/><br/>
         You can search for a specific food website like bonappetit or Taste of Home <br/>
-        Then follow that with the food or drink item to get website specific results.<br/>
-        <div id="close" onClick={this.hideModal}>X</div></div>
+        Then follow that with the food or drink item to get website specific results.<br/><br/>
+        Get Searching!
+        <div id="close" onClick={this.showModal}>X</div></div>
         </div>
         </div>)
         }
@@ -105,13 +112,6 @@ class App extends Component {
         })
         }
 
-    hideModal = () => {
-        this.setState({
-            show:false
-        })
-        }
-
- 
     
     render() {
         if (this.state.loadingPicture) {
