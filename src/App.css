@@ -7,7 +7,7 @@ body {
   background-color: rgb(14, 90, 131);
   margin: 0;
   padding: 0;
-  background-image: url("https://images.pexels.com/photos/459469/pexels-photo-459469.jpeg?cs=srgb&dl=basil-delicious-food-459469.jpg&fm=jpg");
+  background-image: url("https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,9 +17,9 @@ body {
 .App {
   text-align: center;
   height: 100vh;
+  width:100%;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 #header {
@@ -42,7 +42,7 @@ body {
 
 
 #header .title{
-  background-color:rgb(20, 219, 86);
+  background-color:rgb(134,205,100);
   color:white
 }
 
@@ -51,7 +51,7 @@ body {
   background-color: white;
   display:flex;
   justify-content: flex-end;
-  background-color:rgb(20, 219, 86);
+  background-color:rgb(134,205,100);
 }
 
 #food-input {
@@ -73,6 +73,60 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   margin-left:5px;;
+}
+
+#modal-container{
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  font-size:1.5em;
+  font-weight:bold;
+  z-index: 10;
+}
+
+#modal{
+  background-color: rgb(255, 255, 255);
+  width:50%;
+  margin-top:-150px;
+  position: absolute;
+  border-radius:10px;
+  z-index: 10;
+}
+
+#help-button{
+  background-color: rgb(247, 154, 15);
+  height:50px;
+  width:50px;
+  color:white;
+  font-weight:bold;
+  margin:10px 10px 0 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius:10px;
+}
+#help-button:hover{
+  cursor: pointer;
+}
+
+#close{
+  background-color: red;
+  height:25px;
+  width:25px;
+  color:white;
+  font-weight:bold;
+  position: absolute;
+  right:0;
+  top:0;
+  border-radius:0 10px 0 0;
+  z-index: 1;
+}
+#close:hover{
+  cursor: pointer;
 }
 
 .sub-title{
@@ -131,7 +185,7 @@ body {
 
 
 #footer{
-  background-color:rgb(20, 219, 86);
+  background-color:rgb(134,205,100);
   position:fixed;
   width:100%;
   bottom:0;
@@ -151,7 +205,7 @@ body {
   
   
   #header .title{
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(134,205,100);
     color:rgb(14, 13, 13);
     font-size: 1.2em;
   }
@@ -161,7 +215,7 @@ body {
     background-color: white;
     display:flex;
     justify-content: flex-end;
-    background-color:rgb(253, 253, 253)
+    background-color:rgb(134,205,100)
   }
 
   #food-input {
@@ -171,12 +225,32 @@ body {
   }
   
   #submit-btn {
-    background-color: rgb(50, 211, 50);
+    background-color: rgb(248, 248, 248);
     border: none;
     height: 50px;
     width: 80px;
     margin-top:10px;
     margin-right:10px;
   }
+
+  #modal-container{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    font-size:1.5em;
+    font-weight:bold;
+    z-index: 10;
+  }
+
+
+  #modal{
+    background-color: rgb(255, 255, 255);
+    width:80%;
+  }
+
 
 }

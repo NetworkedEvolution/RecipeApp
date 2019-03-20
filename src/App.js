@@ -14,25 +14,17 @@ class App extends Component {
             label:"",
             response:false,
             loadingPicture:false,
+            show:false,
+            modalClass:""
         }
     }
 
-    
-
-    // componentDidMount() {
-    //     this.setState({
-    //         isLoaded: true,
-    //     })
-    // }
- 
      onsubmit = event =>{
         const keyCode = event.keyCode || event.which;
                     if (keyCode === 13) {
                     this.searchRecipes();
                     }
                  }
-
-    
 
     onFoodChange = event => {
         this.setState({ Food: event.target.value});
@@ -43,14 +35,11 @@ class App extends Component {
             loadingPicture:true
         })
     }
-
-    
-
     
     searchRecipes = () => {
         this.loadingSpinner()
         const  {Food}  = this.state;
-        const MAX_RESULTS = 100; // Change for performance reasons
+        const MAX_RESULTS = 100; // Change for performance
         const API_KEY = "414c4ae5cd2446bda63bcb12231722cf";
         //RECIPE APP ID
         const API_ID = "3800b0d1";
@@ -75,24 +64,12 @@ class App extends Component {
     }
     
 
-    //     createElement = () =>{
-        
-    //         for(let i=0;i<10;i++){
-    //     <div>{this.state.label[i]}</div>
-    //     }
-    // }
     
-    
-    
-    componentDidMount() {
-        this.setState({
-        isLoaded:true          
-        })
-        
-      }
+    // componentDidMount() {
+  
+    //   }
 
       renderImages = () => {
-          
         if (!this.state.food) {
             return null;
         } 
@@ -103,17 +80,38 @@ class App extends Component {
                 <img  src={food.recipe.image} /> 
                 <div>{this.state.label[i].recipe.label}</div>
                 </a>
-               {/* {this.state.label.map((label,i)  => <div key={i}>{label.recipe.label}</div>)}  */}
                 </div>
             )}))
     }
 
-    // renderDescription = () => {
-    //     if (!this.state.label) {
-    //         return null;
-    //     } 
-    //     return this.state.label.map(label => <div>{label.recipe.label}</div>);
-    // }
+
+
+    Modal = () => {
+        if(this.state.show === false){
+            return null
+        }else
+       return(<div >
+        <div id="modal-container"><div id="modal">Help <br/><br/>
+        You can search for a specific food website like bonappetit or Taste of Home <br/>
+        Then follow that with the food or drink item to get website specific results.<br/>
+        <div id="close" onClick={this.hideModal}>X</div></div>
+        </div>
+        </div>)
+        }
+
+    showModal = () => {
+        this.setState({
+            show: this.show = !this.show
+        })
+        }
+
+    hideModal = () => {
+        this.setState({
+            show:false
+        })
+        }
+
+ 
     
     render() {
         if (this.state.loadingPicture) {
@@ -123,8 +121,10 @@ class App extends Component {
            return (
                 <div className="App">
 
-                   <Header searchRecipes={this.searchRecipes} onFoodChange={this.onFoodChange} onsubmit={this.onsubmit}/> {/* Header COMPONENT */}
-
+                   <Header searchRecipes={this.searchRecipes} onFoodChange={this.onFoodChange} onsubmit={this.onsubmit} showModal={this.showModal}/> {/* Header COMPONENT */}
+                    <div>{this.Modal()}</div>
+                    
+                    
                       <div className="app-container">
                         <div className="sub-title">Your Food:<br/>{this.state.Food}<br/></div>
                             <div className="response-container">{this.renderImages()}</div>
