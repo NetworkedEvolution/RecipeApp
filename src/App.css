@@ -4,10 +4,10 @@
 }
 
 body {
-  background-color: rgb(14, 90, 131);
+  background-color: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
-  background-image: url("https://images.pexels.com/photos/326268/pexels-photo-326268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,6 +77,9 @@ body {
   border: none;
   border-radius: 5px;
 }
+#submit-btn:hover{
+  cursor: pointer
+}
 
 #modal-container {
   height: 100%;
@@ -92,16 +95,16 @@ body {
 }
 
 #modal {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(133, 205, 100, 0.747);
   width: 50%;
   margin-top: -150px;
   position: absolute;
   z-index: 10;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 #help-button {
-  background-color: rgba(252, 159, 1, 0.815);
+  background-color: rgb(120, 196, 85);
   height: 50px;
   width: 50px;
   color: white;
@@ -127,6 +130,9 @@ body {
   right: 0;
   top: 0;
   z-index: 1;
+  display:flex;
+  justify-content: center;
+  align-items: center
 }
 
 #close:hover {
@@ -134,7 +140,7 @@ body {
 }
 
 .sub-title {
-  color: white;
+  color:rgb(69, 150, 31);
   font-size: 2em;
   margin-top: 100px;
   font-weight: bold;
@@ -163,10 +169,13 @@ body {
 
 .response-image {
   background-color: rgba(97, 97, 97, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   width: 350px;
   margin: 20px;
   padding: 20px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .response-image img:hover {
@@ -184,19 +193,17 @@ body {
   border: 1px solid white;
   border-radius: 5px;
   width: 95%;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
 }
 
-#vendor {
-  font-size: .7em;
+#source {
+  font-size: .8em;
   font-weight: 600;
   color: rgba(133, 205, 100)
 }
 
 #calories {
-  font-size: .5em;
+  font-size: .6em;
   font-weight: 600;
   color: rgb(252, 159, 1)
 }
@@ -270,7 +277,7 @@ body {
 
 
   #modal {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(133, 205, 100, 0.747);
     width: 80%;
   }
 

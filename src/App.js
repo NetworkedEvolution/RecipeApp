@@ -82,7 +82,7 @@ class App extends Component {
                 <a href={this.state.url[i].recipe.url} target="_blank">
                 <img  src={food.recipe.image} /> 
                 <div>{this.state.label[i].recipe.label}</div>
-                <div id="vendor">{this.state.source[i].recipe.source}</div>
+                <div id="source">{this.state.source[i].recipe.source}</div>
                 <div id="calories">Calories: {Math.floor(this.state.calories[i].recipe.calories)}</div>
                 </a>
                 </div>
