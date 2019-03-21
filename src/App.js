@@ -61,6 +61,7 @@ class App extends Component {
                 source:json.hits,
                 calories: json.hits,
                 url: json.hits,
+                noResponse: json.count
             })
         });
         
@@ -73,7 +74,8 @@ class App extends Component {
     //   }
 
       renderImages = () => {
-        if (!this.state.food) {
+          
+       if (!this.state.food) {
             return null;
         } 
         return(
@@ -87,6 +89,7 @@ class App extends Component {
                 </a>
                 </div>
             )}))
+            
     }
 
 
@@ -112,6 +115,21 @@ class App extends Component {
         })
         }
 
+        noResponse = () => {
+                if(this.state.noResponse == 0){
+                    return this.noResponseClear()
+                }
+                
+        }
+        noResponseClear = () => {
+            alert("Could not find any results.. Please try again.")
+            this.setState({
+                noResponse: 1
+            })
+            
+          
+        }
+
     
     render() {
         if (this.state.loadingPicture) {
@@ -127,6 +145,7 @@ class App extends Component {
                     
                       <div className="app-container">
                         <div className="sub-title">Your Food:<br/>{this.state.Food}<br/></div>
+                        <div className="response-container">{this.noResponse()}</div>
                             <div className="response-container">{this.renderImages()}</div>
                      
                       </div>
