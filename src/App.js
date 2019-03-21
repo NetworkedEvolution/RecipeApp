@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MetaTags from 'react-meta-tags';
 import './App.css';
 import './styles/title.css';
 import Header from './components/Header';
@@ -138,6 +139,12 @@ class App extends Component {
        {
            return (
                 <div className="App">
+
+                <MetaTags>
+                    <title>Recipe App</title>
+                    <meta name="theme-color" content="#78c455"/>
+                    <meta id="meta-description" name="description" content="Some description." />
+                </MetaTags>
 
                    <Header searchRecipes={this.searchRecipes} onFoodChange={this.onFoodChange} onsubmit={this.onsubmit} showModal={this.showModal}/> {/* Header COMPONENT */}
                     <div>{this.Modal()}</div>
